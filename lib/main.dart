@@ -310,6 +310,7 @@ class _NameFormState extends State<NameForm> {
           child: Stack(
             children: [
               _buildBackgroundOfCard(),
+              _buildBackgroundLogo(),
               _buildForegroundOfCard(),
             ],
           ),
@@ -361,7 +362,7 @@ class _NameFormState extends State<NameForm> {
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 style: TextStyle(
-                    letterSpacing: 10.0,
+                    letterSpacing: 12.0,
                     fontSize: 80,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
@@ -379,11 +380,11 @@ class _NameFormState extends State<NameForm> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(20.0), 
+                padding: const EdgeInsets.all(20.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.memory(_imageFile!,
-                      width: 150, height: 200, fit: BoxFit.contain),
+                      width: 150, height: 200, fit: BoxFit.fitHeight),
                 ),
               ),
               Padding(
@@ -468,13 +469,17 @@ class _NameFormState extends State<NameForm> {
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          maxLines: 1,
-          '${_nameGrController.text} / ${_nameEnController.text}',
-          style: TextStyle(
-              fontSize: _textSize,
-              fontWeight: FontWeight.bold,
-              color: Colors.black),
+        SizedBox(
+          width: 220.0,
+          child: AutoSizeText(
+            minFontSize: 1.0,
+            maxLines: 1,
+            '${_nameGrController.text} / ${_nameEnController.text}',
+            style: TextStyle(
+                fontSize: _textSize,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
         ),
         const SizedBox(
           width: 230.0,
@@ -493,13 +498,17 @@ class _NameFormState extends State<NameForm> {
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          maxLines: 1,
-          '${_surnameGrController.text} / ${_surnameEnController.text}',
-          style: TextStyle(
-              fontSize: _textSize,
-              fontWeight: FontWeight.bold,
-              color: Colors.black),
+        SizedBox(
+          width: 220.0,
+          child: AutoSizeText(
+            minFontSize: 1.0,
+            maxLines: 1,
+            '${_surnameGrController.text} / ${_surnameEnController.text}',
+            style: TextStyle(
+                fontSize: _textSize,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
         ),
         const SizedBox(
           width: 230.0,
@@ -518,13 +527,17 @@ class _NameFormState extends State<NameForm> {
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          _selectedIdetifier,
-          maxLines: 1,
-          style: TextStyle(
-              fontSize: _textSize,
-              fontWeight: FontWeight.bold,
-              color: Colors.black),
+        SizedBox(
+          width: 220.0,
+          child: AutoSizeText(
+            minFontSize: 1.0,
+            maxLines: 1,
+            _selectedIdetifier,
+            style: TextStyle(
+                fontSize: _textSize,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
         ),
         const SizedBox(
           width: 230.0,
@@ -543,13 +556,17 @@ class _NameFormState extends State<NameForm> {
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '${_ethnicityGrController.text} / ${_ethnicityEnController.text}',
-          maxLines: 1,
-          style: TextStyle(
-              fontSize: _textSize,
-              fontWeight: FontWeight.bold,
-              color: Colors.black),
+        SizedBox(
+          width: 220.0,
+          child: AutoSizeText(
+            minFontSize: 1.0,
+            '${_ethnicityGrController.text} / ${_ethnicityEnController.text}',
+            maxLines: 1,
+            style: TextStyle(
+                fontSize: _textSize,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
         ),
         const SizedBox(
           width: 230.0,
@@ -569,6 +586,15 @@ class _NameFormState extends State<NameForm> {
         Text('EXPIRAION DATE'),
         Text('30/12/2026', style: TextStyle(fontWeight: FontWeight.bold)),
       ],
+    );
+  }
+
+  Widget _buildBackgroundLogo() {
+    return Center(
+      child: Image.network(
+          opacity: const AlwaysStoppedAnimation(0.2),
+          fit: BoxFit.cover,
+          'https://static.wixstatic.com/media/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png/v1/fit/w_2500,h_1330,al_c/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png'),
     );
   }
 }
