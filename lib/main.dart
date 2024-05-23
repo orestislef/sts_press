@@ -341,34 +341,36 @@ class _NameFormState extends State<NameForm> {
   }
 
   Widget _buildRedBackground() {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: 85,
-      color: const Color(0xff613431),
+      child: Image.asset('assets/images/carbon.png', fit: BoxFit.fitHeight),
     );
   }
 
   Widget _buildPressRotated() {
-    return Container(
-      color: const Color(0xff613431),
-      child: const SizedBox(
-        height: double.infinity,
-        width: 85,
-        child: RotatedBox(
-            quarterTurns: 3,
-            child: Center(
-              child: Text(
-                'PRESS',
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                style: TextStyle(
-                    letterSpacing: 12.0,
-                    fontSize: 80,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-            )),
-      ),
+    return Stack(
+      children: [
+        _buildRedBackground(),
+        const SizedBox(
+          height: double.infinity,
+          width: 70,
+          child: RotatedBox(
+              quarterTurns: 3,
+              child: Center(
+                child: Text(
+                  'PRESS',
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  style: TextStyle(
+                      letterSpacing: 20.0,
+                      fontSize: 58,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+              )),
+        ),
+      ],
     );
   }
 
@@ -597,4 +599,5 @@ class _NameFormState extends State<NameForm> {
           'https://static.wixstatic.com/media/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png/v1/fit/w_2500,h_1330,al_c/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png'),
     );
   }
+
 }
