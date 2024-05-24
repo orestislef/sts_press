@@ -73,6 +73,8 @@ class _NameFormState extends State<NameForm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  _buildBusinessCard(),
+                  _buildBusinessCard(isBack: true),
                   hasError ? Text(errorText) : Container(),
                   Row(
                     children: [
@@ -225,6 +227,7 @@ class _NameFormState extends State<NameForm> {
                           ? null
                           : () {
                               _generateAndDownloadCard();
+                              _generateAndDownloadCard(isBack: true);
                             },
                       child: const Text('Δημιουργία και λήψη κάρτας'),
                     ),
@@ -262,7 +265,7 @@ class _NameFormState extends State<NameForm> {
 
   bool isGenerating = false;
 
-  void _generateAndDownloadCard() {
+  void _generateAndDownloadCard({bool isBack = false}) {
     setState(() {
       isGenerating = true;
     });
@@ -274,7 +277,7 @@ class _NameFormState extends State<NameForm> {
         context: context,
         constraints: BoxConstraints.tight(const Size(600, 400)),
         pixelRatio: 3.0,
-        _buildBusinessCard(),
+        _buildBusinessCard(isBack: isBack),
         delay: const Duration(milliseconds: 1000),
       )
           .then((screenshot) {
@@ -293,7 +296,7 @@ class _NameFormState extends State<NameForm> {
     });
   }
 
-  Widget _buildBusinessCard() {
+  Widget _buildBusinessCard({bool isBack = false}) {
     return Container(
       height: 400,
       width: 600,
@@ -309,9 +312,9 @@ class _NameFormState extends State<NameForm> {
           borderRadius: BorderRadius.circular(10),
           child: Stack(
             children: [
-              _buildBackgroundOfCard(),
+              _buildBackgroundOfCard(isBack: isBack),
               _buildBackgroundLogo(),
-              _buildForegroundOfCard(),
+              _buildForegroundOfCard(isBack: isBack),
             ],
           ),
         ),
@@ -319,28 +322,23 @@ class _NameFormState extends State<NameForm> {
     );
   }
 
-  Widget _buildBackgroundOfCard() {
+  Widget _buildBackgroundOfCard({required bool isBack}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildRedBackground(),
-        _buildPressRotated(),
+        _buildCarbonBackground(),
+        _buildPressRotated(isBack: isBack),
       ],
     );
   }
 
-  Widget _buildForegroundOfCard() {
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        _buildImage(),
-        _buildCenterInfo(),
-        const SizedBox(width: 85),
-      ],
-    );
+  Widget _buildForegroundOfCard({required bool isBack}) {
+    return isBack
+        ? _buildBackForeground()
+        : _buildFrontForeground(isBack: isBack);
   }
 
-  Widget _buildRedBackground() {
+  Widget _buildCarbonBackground() {
     return SizedBox(
       height: double.infinity,
       width: 85,
@@ -348,58 +346,78 @@ class _NameFormState extends State<NameForm> {
     );
   }
 
-  Widget _buildPressRotated() {
+  Widget _buildPressRotated({required bool isBack}) {
     return Stack(
       children: [
-        _buildRedBackground(),
-        const SizedBox(
-          height: double.infinity,
-          width: 70,
-          child: RotatedBox(
-              quarterTurns: 3,
-              child: Center(
-                child: Text(
-                  'PRESS',
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  style: TextStyle(
-                      letterSpacing: 20.0,
-                      fontSize: 58,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-              )),
-        ),
+        _buildCarbonBackground(),
+        if (!isBack)
+          const SizedBox(
+            height: double.infinity,
+            width: 70,
+            child: RotatedBox(
+                quarterTurns: 3,
+                child: Center(
+                  child: Text(
+                    'PRESS',
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    style: TextStyle(
+                        letterSpacing: 20.0,
+                        fontSize: 58,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )),
+          ),
       ],
     );
   }
 
   Widget _buildImage() {
-    return _imageFile != null
-        ? Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.memory(_imageFile!,
-                      width: 150, height: 200, fit: BoxFit.fitHeight),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Image.asset(
-                  'assets/images/es.png',
-                  width: 65,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          )
-        : Container();
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: _imageFile == null
+                ? const Placeholder(
+                    fallbackWidth: 150,
+                    fallbackHeight: 200,
+                  )
+                : Image.memory(
+                    _imageFile!,
+                    width: 150,
+                    height: 200,
+                    fit: BoxFit.fitHeight,
+                  ),
+          ),
+        ),
+        const SizedBox(height: 20.0),
+        const Padding(
+          padding: EdgeInsets.fromLTRB(12.0, 0.0, 0.0, 5.0),
+          child: Text(
+            'Μέλος της',
+            style: TextStyle(
+              fontSize: 10,
+              letterSpacing: 2.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Image.asset(
+            'assets/images/es.png',
+            width: 75,
+            color: Colors.white,
+          ),
+        ),
+      ],
+    );
   }
 
   Widget _buildCenterInfo() {
@@ -583,11 +601,14 @@ class _NameFormState extends State<NameForm> {
   }
 
   Widget _buildExpiryDate() {
-    return const Column(
-      children: [
-        Text('EXPIRAION DATE'),
-        Text('30/12/2026', style: TextStyle(fontWeight: FontWeight.bold)),
-      ],
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(118.0, 0.0, 0.0, 0.0),
+      child: Column(
+        children: [
+          Text('EXPIRATION DATE'),
+          Text('30/12/2026', style: TextStyle(fontWeight: FontWeight.bold)),
+        ],
+      ),
     );
   }
 
@@ -600,4 +621,18 @@ class _NameFormState extends State<NameForm> {
     );
   }
 
+  Widget _buildFrontForeground({required bool isBack}) {
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        _buildImage(),
+        _buildCenterInfo(),
+        const SizedBox(width: 85),
+      ],
+    );
+  }
+
+  Widget _buildBackForeground() {
+    return Container();
+  }
 }
