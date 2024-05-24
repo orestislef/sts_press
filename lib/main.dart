@@ -1,7 +1,8 @@
 import 'dart:math';
-import 'dart:typed_data';
 
 import 'package:auto_size_text_plus/auto_size_text.dart';
+import 'package:custom_qr_generator/custom_qr_generator.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:screenshot/screenshot.dart';
@@ -41,12 +42,20 @@ const List<String> _spinnerItems = [
 
 class _NameFormState extends State<NameForm> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameGrController = TextEditingController();
-  final TextEditingController _nameEnController = TextEditingController();
-  final TextEditingController _surnameGrController = TextEditingController();
-  final TextEditingController _surnameEnController = TextEditingController();
-  final TextEditingController _ethnicityGrController = TextEditingController();
-  final TextEditingController _ethnicityEnController = TextEditingController();
+  final TextEditingController _nameGrController =
+      TextEditingController(text: kDebugMode ? 'TEST' : '');
+  final TextEditingController _nameEnController =
+      TextEditingController(text: kDebugMode ? 'TEST' : '');
+  final TextEditingController _surnameGrController =
+      TextEditingController(text: kDebugMode ? 'TEST' : '');
+  final TextEditingController _surnameEnController =
+      TextEditingController(text: kDebugMode ? 'TEST' : '');
+  final TextEditingController _ethnicityGrController =
+      TextEditingController(text: kDebugMode ? 'TEST' : '');
+  final TextEditingController _ethnicityEnController =
+      TextEditingController(text: kDebugMode ? 'TEST' : '');
+  final TextEditingController _qrUrlController =
+      TextEditingController(text: 'https://www.streetthugssalonica.org');
   Uint8List? _imageFile;
   final ScreenshotController _screenshotController = ScreenshotController();
   bool hasError = false;
@@ -190,6 +199,19 @@ class _NameFormState extends State<NameForm> {
                       ),
                     ],
                   ),
+                  TextFormField(
+                    controller: _qrUrlController,
+                    decoration: const InputDecoration(
+                      labelText: 'Url for qr code',
+                      hintText: 'Please enter your url',
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please enter your url';
+                      }
+                      return null;
+                    },
+                  ),
                   DropdownButton<String>(
                     value: _selectedIdetifier,
                     onChanged: (value) {
@@ -327,7 +349,7 @@ class _NameFormState extends State<NameForm> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _buildCarbonBackground(),
-        _buildPressRotated(isBack: isBack),
+        _buildPressRotated(),
       ],
     );
   }
@@ -346,29 +368,28 @@ class _NameFormState extends State<NameForm> {
     );
   }
 
-  Widget _buildPressRotated({required bool isBack}) {
+  Widget _buildPressRotated() {
     return Stack(
       children: [
         _buildCarbonBackground(),
-        if (!isBack)
-          const SizedBox(
-            height: double.infinity,
-            width: 70,
-            child: RotatedBox(
-                quarterTurns: 3,
-                child: Center(
-                  child: Text(
-                    'PRESS',
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    style: TextStyle(
-                        letterSpacing: 20.0,
-                        fontSize: 58,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )),
-          ),
+        const SizedBox(
+          height: double.infinity,
+          width: 70,
+          child: RotatedBox(
+              quarterTurns: 3,
+              child: Center(
+                child: Text(
+                  'PRESS',
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  style: TextStyle(
+                      letterSpacing: 20.0,
+                      fontSize: 58,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+              )),
+        ),
       ],
     );
   }
@@ -633,6 +654,71 @@ class _NameFormState extends State<NameForm> {
   }
 
   Widget _buildBackForeground() {
-    return Container();
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        _buildLeftBackForeground(),
+        _buildBackCenterForeground(),
+      ],
+    );
+  }
+
+  Widget _buildLeftBackForeground() {
+    return const Row(
+      children: [
+        SizedBox(width: 20),
+        SizedBox(
+          width: 70,
+          child: RotatedBox(
+            quarterTurns: 3,
+            child: Text(
+              textAlign: TextAlign.center,
+              'e-mail: streetthugssalonica@gmail.com\nwww.streetthugssalonica.org',
+              style: TextStyle(
+                  color: Colors.white, fontSize: 12, letterSpacing: 3.0),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBackCenterForeground() {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(80.0, 20.0, 0.0, 0.0),
+          child: Image.asset(
+            'assets/images/es.png',
+            width: 180.0,
+            color: Colors.blueGrey[800],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(100.0, 100.0, 0.0, 0.0), //(50.0),
+          child: CustomPaint(
+            size: const Size(150, 150),
+            painter: QrPainter(
+              data: _qrUrlController.text,
+              options: QrOptions(
+                shapes: const QrShapes(
+                    darkPixel: QrPixelShapeRoundCorners(cornerFraction: .5),
+                    frame: QrFrameShapeRoundCorners(cornerFraction: .25),
+                    ball: QrBallShapeRoundCorners(cornerFraction: .25)),
+                colors: QrColors(
+                  background: QrColor.solid(Colors.transparent),
+                  dark: QrColorLinearGradient(
+                    colors: [Colors.blueGrey[800]!, Colors.blueGrey],
+                    orientation: GradientOrientation.leftDiagonal,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
