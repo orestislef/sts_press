@@ -1,1 +1,1 @@
-# sts press deplay site
+# sts press deploy site
