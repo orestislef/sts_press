@@ -292,7 +292,7 @@ class _NameFormState extends State<NameForm> {
       isGenerating = true;
     });
     // Delay before taking a screenshot
-    Future.delayed(const Duration(milliseconds: 1000)).then((_) {
+    Future.delayed(const Duration(milliseconds: 100)).then((_) {
       // Capture the screenshot
       _screenshotController
           .captureFromLongWidget(
@@ -300,7 +300,7 @@ class _NameFormState extends State<NameForm> {
         constraints: BoxConstraints.tight(const Size(600, 400)),
         pixelRatio: 3.0,
         _buildBusinessCard(isBack: isBack),
-        delay: const Duration(milliseconds: 1000),
+        delay: const Duration(milliseconds: 100),
       )
           .then((screenshot) {
         // Create a Blob from the screenshot
@@ -635,10 +635,10 @@ class _NameFormState extends State<NameForm> {
 
   Widget _buildBackgroundLogo() {
     return Center(
-      child: Image.network(
+      child: Image.asset(
           opacity: const AlwaysStoppedAnimation(0.2),
           fit: BoxFit.cover,
-          'https://static.wixstatic.com/media/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png/v1/fit/w_2500,h_1330,al_c/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png'),
+          'assets/images/logo.png'),
     );
   }
 
