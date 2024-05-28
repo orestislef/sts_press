@@ -430,10 +430,10 @@ class _NameFormState extends State<NameForm> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.fromLTRB(15.0, 5.0, 0.0, 5.0),
           child: Image.asset(
-            'assets/images/es.png',
-            width: 75,
+            'assets/images/ed.png',
+            height: 60,
             color: Colors.white,
           ),
         ),
@@ -627,7 +627,7 @@ class _NameFormState extends State<NameForm> {
       child: Column(
         children: [
           Text('EXPIRATION DATE'),
-          Text('30/12/2026', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text('31/12/2028', style: TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
     );
@@ -688,16 +688,27 @@ class _NameFormState extends State<NameForm> {
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(80.0, 20.0, 0.0, 0.0),
-          child: Image.asset(
-            'assets/images/es.png',
-            width: 180.0,
-            color: Colors.blueGrey[800],
+        // Padding(
+        //   padding: const EdgeInsets.only(top: 10.0),
+        //   child: Image.asset(
+        //     'assets/images/es.png',
+        //     width: 200.0,
+        //     color: Colors.blueGrey[800],
+        //   ),
+        // ),
+        const SizedBox(height: 10.0),
+        const SizedBox(
+          width: 360.0,
+          height: 180.0,
+          child: AutoSizeText(
+            'Τακτικό μέλος της αρθρογραφικής ομάδας Street Thugs Salonica και μέλος της Ένωσης Δημοσιογράφων Περιοδικού και Ηλεκτρονικού Τύπου. Οι αρχές οφείλουν να του εξασφαλίσουν κάθε νόμιμη διευκόλυνση για την άσκηση του λειτουργήματός του. Οι αρχές μπορούν να ταυτοποιήσουν τα στοιχεία είτε σκανάροντας το QR code ή μέσω του ιστότοπου www.streetthugssalonica.org.\n\nRegular member of the Street Thugs Salonica writing team and member of the Union of Magazine and Electronic Press Journalists. The authorities must ensure he receives every legal facility to perform his duties. The authorities can verify the information either by scanning the QR code or through the website www.streetthugssalonica.org.',
+            style: TextStyle(fontSize: 35.0),
+            minFontSize: 1.0,
+            textAlign: TextAlign.center,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(100.0, 100.0, 0.0, 0.0), //(50.0),
+          padding: const EdgeInsets.only(top: 10.0),
           child: CustomPaint(
             size: const Size(150, 150),
             painter: QrPainter(
