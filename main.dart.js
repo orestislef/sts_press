@@ -75614,7 +75614,7 @@ s.aL()},
 HZ(a){this.ap(new A.acF(this))
 A.kX(B.cF,null,t.z).bL(new A.acG(this,a),t.P)},
 ZR(){return this.HZ(!1)},
-yP(a6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=null,a0="assets/images/carbon.png",a1=A.E8(10),a2=A.E8(10),a3=t.E,a4=A.o1(A.a([A.eq(A.aiA(a0,a,B.hp,a),1/0,85),A.lH(B.c3,A.a([A.eq(A.aiA(a0,a,B.hp,a),1/0,85),B.bzg],a3),B.a1,B.bM,a)],a3),B.au,B.iJ,B.ah),a5=A.jf(new A.na(A.aj5(a,a,new A.q9("https://static.wixstatic.com/media/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png/v1/fit/w_2500,h_1330,al_c/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png",1,a)),a,a,a,B.zf,B.yB,a),a,a)
+yP(a6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=null,a0="assets/images/carbon.png",a1=A.E8(10),a2=A.E8(10),a3=t.E,a4=A.o1(A.a([A.eq(A.aiA(a0,a,B.hp,a),1/0,85),A.lH(B.c3,A.a([A.eq(A.aiA(a0,a,B.hp,a),1/0,85),B.bzh],a3),B.a1,B.bM,a)],a3),B.au,B.iJ,B.ah),a5=A.jf(new A.na(A.aj5(a,a,new A.q9("https://static.wixstatic.com/media/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png/v1/fit/w_2500,h_1330,al_c/3f1eab_d6c90136e7b14f33a143a5d9d80000fa.png",1,a)),a,a,a,B.zf,B.yB,a),a,a)
 if(a6){s=b.z.a.a
 r=new A.xe(s,new A.Ig(new A.Ie(new A.Ic(A.a([B.kR,B.buQ],t.t_),B.D_),new A.xd(B.u)),B.bwR),a)
 q=A.avT(s,B.a0)
@@ -75650,9 +75650,9 @@ B.e.bV(s,2)
 s=d.c
 B.e.bV(B.e.bM(s,4),2)
 B.e.bV(s,2)
-s=A.o1(A.a([B.bxe,A.hq(A.a([B.wZ,B.bzh,new A.cR(B.Co,A.hs(a,a,a,r,B.bz3),a)],a3),B.au,B.a3,B.ah)],a3),B.au,B.a3,B.ah)}else{s=A.E8(10)
+s=A.o1(A.a([B.bxe,A.hq(A.a([B.wZ,B.bzf,new A.cR(B.Co,A.hs(a,a,a,r,B.bz3),a)],a3),B.au,B.a3,B.ah)],a3),B.au,B.a3,B.ah)}else{s=A.E8(10)
 r=b.Q
-s=A.hq(A.a([new A.cR(B.dA,A.ahZ(s,r==null?B.bwI:A.amK(r,B.hp,200,150),B.bC),a),B.ed,B.bw1,new A.cR(B.Ct,A.aiA("assets/images/es.png",B.j,a,60),a)],a3),B.bD,B.a3,B.cN)
+s=A.hq(A.a([new A.cR(B.dA,A.ahZ(s,r==null?B.bwI:A.amK(r,B.hp,200,150),B.bC),a),B.ed,B.bw1,new A.cR(B.Ct,A.aiA("assets/images/ed.png",B.j,a,60),a)],a3),B.bD,B.a3,B.cN)
 s=A.o1(A.a([s,A.hq(A.a([new A.cR(B.dA,A.hq(A.a([B.Bu,A.hq(A.a([A.iP("0"+B.e.k(B.Ab.adS(900)+100),a,a,a,a,a,a,a,B.bBJ,a,a,a),B.bDG],a3),B.au,B.a3,B.ah),B.ed,A.hq(A.a([A.eq(A.V_(b.e.a.a+" / "+b.f.a.a,1,1,A.fv(a,a,B.l,a,a,a,a,a,a,a,a,17,a,a,B.bG,a,a,!0,a,a,a,a,a,a,a,a)),a,220),B.fT,B.bDN],a3),B.bD,B.a3,B.ah),B.ju,A.hq(A.a([A.eq(A.V_(b.r.a.a+" / "+b.w.a.a,1,1,A.fv(a,a,B.l,a,a,a,a,a,a,a,a,17,a,a,B.bG,a,a,!0,a,a,a,a,a,a,a,a)),a,220),B.fT,B.bDC],a3),B.bD,B.a3,B.ah),B.ju,A.hq(A.a([A.eq(A.V_(b.ay,1,1,A.fv(a,a,B.l,a,a,a,a,a,a,a,a,17,a,a,B.bG,a,a,!0,a,a,a,a,a,a,a,a)),a,220),B.fT,B.bDH],a3),B.bD,B.a3,B.ah),B.ju,A.hq(A.a([A.eq(A.V_(b.x.a.a+" / "+b.y.a.a,1,1,A.fv(a,a,B.l,a,a,a,a,a,a,a,a,17,a,a,B.bG,a,a,!0,a,a,a,a,a,a,a,a)),a,220),B.fT,B.bDL],a3),B.bD,B.a3,B.ah),B.wZ,B.bw0],a3),B.bD,B.a3,B.ah),a)],a3),B.au,B.a3,B.ah),B.bze],a3),B.au,B.a3,B.ah)}return A.fL(a,new A.Em(B.kW,10,new A.cj(a1,B.o),A.ahZ(a2,A.lH(B.c3,A.a([a4,a5,s],a3),B.a1,B.bM,a),B.bC),a),B.v,B.j,a,a,400,a,B.dA,600)},
 Xe(){return this.yP(!1)}}
 A.acJ.prototype={
@@ -87774,8 +87774,8 @@ B.bzd=new A.ep(20,null,null,null)
 B.bAt=new A.r(!0,B.j,null,null,null,null,12,null,null,3,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.bDM=new A.d6("e-mail: streetthugssalonica@gmail.com\nwww.streetthugssalonica.org",null,B.bAt,null,B.d1,null,null,null,null,null,null,null,null)
 B.bx8=new A.xR(B.bDM,null)
-B.bzf=new A.ep(70,null,B.bx8,null)
-B.bsA=A.a(s([B.bzd,B.bzf]),t.E)
+B.bzg=new A.ep(70,null,B.bx8,null)
+B.bsA=A.a(s([B.bzd,B.bzg]),t.E)
 B.bxe=new A.xS(B.aN,B.a3,B.ah,B.au,null,B.d4,null,B.bsA,null)
 B.bxf=new A.J4(null,null)
 B.cZ=new A.o2(0,"idle")
@@ -87982,6 +87982,9 @@ B.bza=new A.E(600,400)
 B.bzc=new A.E(77.37,37.9)
 B.ao=new A.ep(0,0,null,null)
 B.bze=new A.ep(85,null,null,null)
+B.bBW=new A.r(!0,null,null,null,null,null,35,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.y1=new A.mw("\u03a4\u03b1\u03ba\u03c4\u03b9\u03ba\u03cc \u03bc\u03ad\u03bb\u03bf\u03c2 \u03c4\u03b7\u03c2 \u03b1\u03c1\u03b8\u03c1\u03bf\u03b3\u03c1\u03b1\u03c6\u03b9\u03ba\u03ae\u03c2 \u03bf\u03bc\u03ac\u03b4\u03b1\u03c2 Street Thugs Salonica \u03ba\u03b1\u03b9 \u03bc\u03ad\u03bb\u03bf\u03c2 \u03c4\u03b7\u03c2 \u0388\u03bd\u03c9\u03c3\u03b7\u03c2 \u0394\u03b7\u03bc\u03bf\u03c3\u03b9\u03bf\u03b3\u03c1\u03ac\u03c6\u03c9\u03bd \u03a0\u03b5\u03c1\u03b9\u03bf\u03b4\u03b9\u03ba\u03bf\u03cd \u03ba\u03b1\u03b9 \u0397\u03bb\u03b5\u03ba\u03c4\u03c1\u03bf\u03bd\u03b9\u03ba\u03bf\u03cd \u03a4\u03cd\u03c0\u03bf\u03c5. \u039f\u03b9 \u03b1\u03c1\u03c7\u03ad\u03c2 \u03bf\u03c6\u03b5\u03af\u03bb\u03bf\u03c5\u03bd \u03bd\u03b1 \u03c4\u03bf\u03c5 \u03b5\u03be\u03b1\u03c3\u03c6\u03b1\u03bb\u03af\u03c3\u03bf\u03c5\u03bd \u03ba\u03ac\u03b8\u03b5 \u03bd\u03cc\u03bc\u03b9\u03bc\u03b7 \u03b4\u03b9\u03b5\u03c5\u03ba\u03cc\u03bb\u03c5\u03bd\u03c3\u03b7 \u03b3\u03b9\u03b1 \u03c4\u03b7\u03bd \u03ac\u03c3\u03ba\u03b7\u03c3\u03b7 \u03c4\u03bf\u03c5 \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03ae\u03bc\u03b1\u03c4\u03cc\u03c2 \u03c4\u03bf\u03c5. \u039f\u03b9 \u03b1\u03c1\u03c7\u03ad\u03c2 \u03bc\u03c0\u03bf\u03c1\u03bf\u03cd\u03bd \u03bd\u03b1 \u03c4\u03b1\u03c5\u03c4\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03bf\u03c5\u03bd \u03c4\u03b1 \u03c3\u03c4\u03bf\u03b9\u03c7\u03b5\u03af\u03b1 \u03b5\u03af\u03c4\u03b5 \u03c3\u03ba\u03b1\u03bd\u03ac\u03c1\u03bf\u03bd\u03c4\u03b1\u03c2 \u03c4\u03bf QR code \u03ae \u03bc\u03ad\u03c3\u03c9 \u03c4\u03bf\u03c5 \u03b9\u03c3\u03c4\u03cc\u03c4\u03bf\u03c0\u03bf\u03c5 www.streetthugssalonica.org.\n\nRegular member of the Street Thugs Salonica writing team and member of the Union of Magazine and Electronic Press Journalists. The authorities must ensure he receives every legal facility to perform his duties. The authorities can verify the information either by scanning the QR code or through the website www.streetthugssalonica.org.",B.bBW,1,B.d1,null,null)
+B.bzf=new A.ep(360,180,B.y1,null)
 B.C4=new A.Fq(null)
 B.fT=new A.ep(230,null,B.C4,null)
 B.wZ=new A.ep(null,10,null,null)
@@ -87991,10 +87994,7 @@ B.bB4=new A.r(!0,B.j,null,null,null,null,58,B.bG,null,20,null,null,null,null,nul
 B.bDO=new A.d6("PRESS",null,B.bB4,null,B.d1,null,null,null,null,null,1,null,null)
 B.Am=new A.kE(B.a_,null,null,B.bDO,null)
 B.bx7=new A.xR(B.Am,null)
-B.bzg=new A.ep(70,1/0,B.bx7,null)
-B.bBW=new A.r(!0,null,null,null,null,null,35,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.y1=new A.mw("\u03a4\u03b1\u03ba\u03c4\u03b9\u03ba\u03cc \u03bc\u03ad\u03bb\u03bf\u03c2 \u03c4\u03b7\u03c2 \u03b1\u03c1\u03b8\u03c1\u03bf\u03b3\u03c1\u03b1\u03c6\u03b9\u03ba\u03ae\u03c2 \u03bf\u03bc\u03ac\u03b4\u03b1\u03c2 Street Thugs Salonica \u03ba\u03b1\u03b9 \u03bc\u03ad\u03bb\u03bf\u03c2 \u03c4\u03b7\u03c2 \u0388\u03bd\u03c9\u03c3\u03b7\u03c2 \u0394\u03b7\u03bc\u03bf\u03c3\u03b9\u03bf\u03b3\u03c1\u03ac\u03c6\u03c9\u03bd \u03a0\u03b5\u03c1\u03b9\u03bf\u03b4\u03b9\u03ba\u03bf\u03cd \u03ba\u03b1\u03b9 \u0397\u03bb\u03b5\u03ba\u03c4\u03c1\u03bf\u03bd\u03b9\u03ba\u03bf\u03cd \u03a4\u03cd\u03c0\u03bf\u03c5. \u039f\u03b9 \u03b1\u03c1\u03c7\u03ad\u03c2 \u03bf\u03c6\u03b5\u03af\u03bb\u03bf\u03c5\u03bd \u03bd\u03b1 \u03c4\u03bf\u03c5 \u03b5\u03be\u03b1\u03c3\u03c6\u03b1\u03bb\u03af\u03c3\u03bf\u03c5\u03bd \u03ba\u03ac\u03b8\u03b5 \u03bd\u03cc\u03bc\u03b9\u03bc\u03b7 \u03b4\u03b9\u03b5\u03c5\u03ba\u03cc\u03bb\u03c5\u03bd\u03c3\u03b7 \u03b3\u03b9\u03b1 \u03c4\u03b7\u03bd \u03ac\u03c3\u03ba\u03b7\u03c3\u03b7 \u03c4\u03bf\u03c5 \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03ae\u03bc\u03b1\u03c4\u03cc\u03c2 \u03c4\u03bf\u03c5. \u039f\u03b9 \u03b1\u03c1\u03c7\u03ad\u03c2 \u03bc\u03c0\u03bf\u03c1\u03bf\u03cd\u03bd \u03bd\u03b1 \u03c4\u03b1\u03c5\u03c4\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03bf\u03c5\u03bd \u03c4\u03b1 \u03c3\u03c4\u03bf\u03b9\u03c7\u03b5\u03af\u03b1 \u03b5\u03af\u03c4\u03b5 \u03c3\u03ba\u03b1\u03bd\u03ac\u03c1\u03bf\u03bd\u03c4\u03b1\u03c2 \u03c4\u03bf QR code \u03ae \u03bc\u03ad\u03c3\u03c9 \u03c4\u03bf\u03c5 \u03c3\u03ac\u03b9\u03c4 www.streetthugssalonica.org.\n\nRegular member of the Street Thugs Salonica writing team and member of the Union of Magazine and Electronic Press Journalists. The authorities must ensure he receives every legal facility to perform his duties. The authorities can verify the information either by scanning the QR code or through the website www.streetthugssalonica.org.",B.bBW,1,B.d1,null,null)
-B.bzh=new A.ep(360,180,B.y1,null)
+B.bzh=new A.ep(70,1/0,B.bx7,null)
 B.bzi=new A.ym(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.x_=new A.JD(0,0,0,0,0,0,!1,!1,null,0)
 B.x0=new A.a6s(1,"enabled")
