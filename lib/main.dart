@@ -137,6 +137,7 @@ class _NameFormState extends State<NameForm> {
                               return 'Παρακαλώ εισάγετε το επώνυμό σας';
                             }
                             return null;
+                            return null;
                           },
                         ),
                       ),
@@ -249,9 +250,19 @@ class _NameFormState extends State<NameForm> {
                           ? null
                           : () {
                               _generateAndDownloadCard();
-                              _generateAndDownloadCard(isBack: true);
                             },
-                      child: const Text('Δημιουργία και λήψη κάρτας'),
+                      child: const Text('Δημιουργία και λήψη κάρτας(front)'),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: isGenerating || _imageFile == null
+                          ? null
+                          : () {
+                        _generateAndDownloadCard(isBack: true);
+                      },
+                      child: const Text('Δημιουργία και λήψη κάρτας(back)'),
                     ),
                   ),
                 ],
@@ -314,6 +325,10 @@ class _NameFormState extends State<NameForm> {
 
         // Revoke the object URL after download
         html.Url.revokeObjectUrl(url);
+
+        setState(() {
+          isGenerating = false;
+        });
       });
     });
   }
@@ -627,7 +642,7 @@ class _NameFormState extends State<NameForm> {
       child: Column(
         children: [
           Text('EXPIRATION DATE'),
-          Text('31/12/2028', style: TextStyle(fontWeight: FontWeight.bold)),
+          Text('31/12/2026', style: TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
     );
