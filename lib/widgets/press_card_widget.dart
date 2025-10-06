@@ -15,6 +15,7 @@ class PressCardWidget extends StatelessWidget {
   final String ethnicityEn;
   final String profession;
   final String qrUrl;
+  final String expirationDate;
   final Uint8List? imageFile;
   final bool isBack;
 
@@ -28,6 +29,7 @@ class PressCardWidget extends StatelessWidget {
     required this.ethnicityEn,
     required this.profession,
     required this.qrUrl,
+    required this.expirationDate,
     required this.imageFile,
     this.isBack = false,
   });
@@ -257,14 +259,14 @@ class PressCardWidget extends StatelessWidget {
   }
 
   Widget _buildExpiryDate() {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(118.0, 0.0, 0.0, 0.0),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(118.0, 0.0, 0.0, 0.0),
       child: Column(
         children: [
-          Text('EXPIRATION DATE'),
+          const Text('EXPIRATION DATE'),
           Text(
-            AppConstants.expirationDate,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            expirationDate,
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -3,7 +3,7 @@ class AppConstants {
   // App information
   static const String appTitle = 'Street Thugs Salonica Γεννήτρια καρτών';
   static const String defaultQrUrl = 'https://www.streetthugssalonica.org';
-  static const String expirationDate = '31/12/2026';
+  static const String defaultExpirationDate = '31/12/2026';
 
   // Card dimensions
   static const double cardHeight = 400.0;

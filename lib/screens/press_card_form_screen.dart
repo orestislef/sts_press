@@ -29,6 +29,7 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
   late final TextEditingController _ethnicityGrController;
   late final TextEditingController _ethnicityEnController;
   late final TextEditingController _qrUrlController;
+  late final TextEditingController _expirationDateController;
 
   // State
   Uint8List? _imageFile;
@@ -48,6 +49,9 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
     _qrUrlController = TextEditingController(
       text: AppConstants.defaultQrUrl,
     );
+    _expirationDateController = TextEditingController(
+      text: AppConstants.defaultExpirationDate,
+    );
   }
 
   @override
@@ -59,6 +63,7 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
     _ethnicityGrController.dispose();
     _ethnicityEnController.dispose();
     _qrUrlController.dispose();
+    _expirationDateController.dispose();
     super.dispose();
   }
 
@@ -168,6 +173,7 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
                       ethnicityEn: _ethnicityEnController.text,
                       profession: _selectedProfession,
                       qrUrl: _qrUrlController.text,
+                      expirationDate: _expirationDateController.text,
                       imageFile: _imageFile,
                       isBack: false,
                     ),
@@ -180,6 +186,7 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
                       ethnicityEn: _ethnicityEnController.text,
                       profession: _selectedProfession,
                       qrUrl: _qrUrlController.text,
+                      expirationDate: _expirationDateController.text,
                       imageFile: _imageFile,
                       isBack: true,
                     ),
@@ -277,6 +284,20 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
               ),
               validator: (value) => value?.isEmpty ?? true
                   ? 'Please enter your url'
+                  : null,
+            ),
+            const SizedBox(height: 16),
+            TextFormField(
+              controller: _expirationDateController,
+              decoration: const InputDecoration(
+                labelText: 'Ημερομηνία λήξης / Expiration Date',
+                hintText: 'ΗΗ/ΜΜ/ΕΕΕΕ',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.calendar_today),
+                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+              ),
+              validator: (value) => value?.isEmpty ?? true
+                  ? 'Παρακαλώ εισάγετε την ημερομηνία λήξης'
                   : null,
             ),
           ],
@@ -400,6 +421,7 @@ class _PressCardFormScreenState extends State<PressCardFormScreen> {
           ethnicityEn: _ethnicityEnController.text,
           profession: _selectedProfession,
           qrUrl: _qrUrlController.text,
+          expirationDate: _expirationDateController.text,
           imageFile: _imageFile,
           isBack: isBack,
         ),
