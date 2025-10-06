@@ -9,18 +9,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^1.1.1
+  image_picker: ^1.2.0
   screenshot: ^3.0.0
   cupertino_icons: ^1.0.8
   universal_html: ^2.2.4
-  auto_size_text_plus: ^3.0.1
+  auto_size_text: ^3.0.0
   custom_qr_generator: ^0.1.2
-  flutter_native_splash: ^2.4.0
+  flutter_native_splash: ^2.4.6
+  flip_card: ^0.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
 flutter:
   uses-material-design: true
   assets:
